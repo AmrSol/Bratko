@@ -1,0 +1,16 @@
+% A member relationship where the following rules apply:
+% member(b,[a,b,c])             is true
+% member(b, [a,[b,c]])          is not true
+% member ([b,c], [a, [b,c]])    is true 
+
+
+% member(X, [X|Tail]).
+
+% member(X, [Head|Tail]) :-
+%     member(X, Tail).
+
+member(X, [X|Tail]).
+
+member(X, [Head|Tail]):-
+    member(X,Tail).
+

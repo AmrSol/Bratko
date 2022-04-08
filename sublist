@@ -1,0 +1,4 @@
+sublist(L,L).
+
+sublist([X|R],[X|L]):-
+    sublist(R,L).

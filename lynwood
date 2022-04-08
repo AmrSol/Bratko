@@ -1,0 +1,45 @@
+tenant(amr).
+tenant(emma).
+tenant(ray).
+tenant(alex).
+
+friends(amr,emma).
+friends(amr,ray).
+friends(amr,alex).
+friends(amr,carlos).
+
+friends(emma,ray).
+friends(emma,alex).
+friends(emma,amr).
+friends(emma,carlos).
+
+friends(ray,amr).
+friends(ray,emma).
+friends(ray, alex).
+friends(ray,carlos).
+
+friends(alex,ray).
+friends(alex,amr).
+friends(alex,emma).
+friends(alex,carlos).
+
+friends(carlos,amr).
+friends(carlos,emma).
+friends(carlos,ray).
+friends(carlos,alex).
+
+love(amr,emma).
+love(emma,amr).
+love(ray,amy).
+love(amy,ray).
+love(monica,alex).
+love(alex,monica).
+love(carlos,eleni).
+love(eleni,carlos).
+
+relationship(X,Y):-
+    love(X,Y), love(Y,X).
+
+pay_rent(X):-
+    tenant(X); 
+    relationship(X,Y), tenant(Y). % amr and emma will come up again because they satisfy the second OR rule. 

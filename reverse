@@ -1,0 +1,3 @@
+reverse([],[]).
+reverse([H|L], R):- 
+    reverse(L,[R|H]).

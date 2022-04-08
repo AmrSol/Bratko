@@ -1,0 +1,5 @@
+evenlength([]).
+
+evenlength([_|List]):- oddlength(List).
+
+oddlength([_|List]):- evenlength(List). 
