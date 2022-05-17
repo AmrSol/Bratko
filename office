@@ -1,0 +1,45 @@
+:- op(500,xfx,was).
+:- op(400,xfx,of).
+:- op(300,fx,the). 
+
+diana was the secretary of the department.
+
+
+:- op(600,xfx,in).
+
+% in(X,[X|_]).
+% in(X,[_|T]):-
+%     in(X,T).
+
+X in [X|_].
+
+X in [_|T]:-
+    X in T. 
+
+% conc([],L,L).
+
+% conc([X|L1], L2, [X|L3]):-
+%     conc(L1, L2, L3). 
+
+:- op(600, fx, concatenating).
+:- op(400, xfx, and).
+:- op(500, xfx, gives).
+
+concatenating [] and L gives L.
+concatenating [X|L1] and L2 gives [X|L3]:-
+    concatenating L1 and L2 gives L3. 
+
+
+% deleting Element from List gives NewList
+:- op(600, fx, deleting).
+% gives is 500
+:- op(400, xfx, from).
+
+% del(X, [X|Rest],Rest).
+
+% del(X, [Keep|Search], [Keep|Rest]):-
+%     del(X,Search,Rest).
+
+deleting X from [X|Rest] gives Rest.
+deleting X from [Keep|Search] gives [Keep|Rest]:-
+    deleting X from Search gives Rest.

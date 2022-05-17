@@ -35,7 +35,7 @@ love(amy,ray).
 love(monica,alex).
 love(alex,monica).
 love(carlos,eleni).
-love(eleni,carlos).
+% love(eleni,carlos).
 
 relationship(X,Y):-
     love(X,Y), love(Y,X).
